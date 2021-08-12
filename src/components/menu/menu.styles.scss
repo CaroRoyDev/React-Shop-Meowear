@@ -1,0 +1,16 @@
+
+  
+  .menu {
+    width: 100%;
+    display: flex;
+    justify-content:stretch;
+    gap: 40px;
+    flex-wrap: wrap;
+
+    & > * {
+        flex: 30% 1 0;
+    }
+  }
+  
+  
+  
