@@ -1,11 +1,22 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import {Route, Switch} from "react-router-dom";
 
-import HomePage from './pages/homepage/homepage.component';
+import "./App.css";
+
+import HomePage from "./pages/homepage/homepage.component";
+
+const Category = ({match}) => {
+  <h1>{match.params.productCategory}</h1>
+}
 
 function App() {
   return (
-   <HomePage/>
+   
+    <Switch>
+      <Route exact path='/' component={HomePage}/>
+      <Route exact path='/:productCategory' component={Category}/>
+    </Switch>
+   
   );
 }
 
