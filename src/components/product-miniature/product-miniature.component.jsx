@@ -1,17 +1,17 @@
 import React from "react";
-import "./category-item.styles.scss";
+import "./product-miniature.styles.scss";
 
-const CategoryItem = ({ id, name, price, imageUrl }) => (
-    <div className="category-item">
+const ProductMiniature = ({ id, name, price, imageUrl }) => (
+    <div className="product-miniature">
         <div
             className="image"
             style={{ backgroundImage: `url(${imageUrl})` }}>
         </div>
-        <div className="category-item-footer">
+        <div className="product-miniature-footer">
             <span className="name">{name}</span>
             <span className="price">{price} $</span>
         </div>
     </div>
 )
 
-export default CategoryItem;
+export default ProductMiniature;

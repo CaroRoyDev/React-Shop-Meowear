@@ -3,7 +3,7 @@
     width: auto;
     height: 50px;
     letter-spacing: 0.5px;
-    line-height: 50px;
+    line-height: 1em;
     padding: 0 35px 0 35px;
     font-size: 15px;
     background-color: black;
@@ -17,6 +17,15 @@
       background-color: white;
       color: black;
      
+    }
+
+    &.inverted {
+      background-color: #fff;
+      color: #000;
+      &:hover{
+        background-color: #000;
+        color: #fff;
+      }
     }
 
     &.google-signin{

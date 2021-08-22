@@ -1,7 +1,7 @@
 import React from "react";
 import './category-preview.styles.scss';
 
-import CategoryItem from "../category-item/category-item.component";
+import ProductMiniature from "../product-miniature/product-miniature.component";
 
 const CategoryPreview = ({ title, items }) => (
     <div className="category-preview">
@@ -10,7 +10,7 @@ const CategoryPreview = ({ title, items }) => (
             {items
                 .filter((item, index) => index < 4)
                 .map(({ id, ...itemProps }) => (
-                   <CategoryItem key={id} {...itemProps}></CategoryItem>
+                   <ProductMiniature key={id} {...itemProps}></ProductMiniature>
                 ))}
         </div>
     </div>

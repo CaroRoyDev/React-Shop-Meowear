@@ -42,16 +42,19 @@ class App extends React.Component {
     return (
       <div>
         <Header />
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/shop" component={ShopPage} />
-          <Route
-            exact path="/signin"
-            render={() => 
-              currentUser ? <Redirect to="/" /> : <AuthenticationPage />
-            }
-          />
-        </Switch>
+        <div className="main">
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/shop" component={ShopPage} />
+            <Route
+              exact
+              path="/signin"
+              render={() =>
+                currentUser ? <Redirect to="/" /> : <AuthenticationPage />
+              }
+            />
+          </Switch>
+        </div>
       </div>
     );
   }
@@ -62,7 +65,6 @@ const mapStateToProps = ({ user }) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  
   setCurrentUser: (user) => dispatch(setCurrentUser(user)),
 });
 

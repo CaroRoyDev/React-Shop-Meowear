@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 import { auth } from "../../firebase/firebase.utils";
 
 import { ReactComponent as Logo } from '../../assets/logo.svg';
+import CartIcon from "../cart-icon/cart-icon.component";
+import CartDropdown from "../cart-dropdown/cart-dropdown.component";
+
 import "./header.styles.scss";
 
 
@@ -19,6 +22,9 @@ const Header = ({ currentUser }) => (
             <Link className="menu-link" to="/contact">
                 Contact
             </Link>
+            <span className="menu-link">
+                <CartIcon />
+            </span>
             {
                 currentUser ?
                     (<span className="menu-link" onClick={() => auth.signOut()}>
@@ -29,13 +35,14 @@ const Header = ({ currentUser }) => (
                         Sign in
                     </Link>)
             }
-            {currentUser ? <img src={currentUser.photoURL} alt="" /> : null}
+            {currentUser ? <img className="user-picture" src={currentUser.photoURL} alt="" /> : null}
         </div>
+        <CartDropdown />
     </header>
 )
 
 const mapStateToProps = state => ({
-    currentUser: state.user.currentUser
+    currentUser: state.user.currentUser,
 })
 
 export default connect(mapStateToProps)(Header);
