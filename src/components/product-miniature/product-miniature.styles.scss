@@ -4,13 +4,14 @@
   flex-direction: column;
   height: 350px;
   align-items: center;
-
+  position: relative;
   .image {
     width: 100%;
     height: 95%;
     background-size: cover;
     background-position: center;
     margin-bottom: 5px;
+    transition: opacity ease-in-out .4s ;
   }
 
   .product-miniature-footer {
@@ -28,6 +29,25 @@
     .price {
       text-align: right;
       min-width: 50px;
+    }
+  }
+
+  .add-to-cart{
+    width: 80%;
+    opacity: 0;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+
+  &:hover{
+
+    .image{
+      opacity: .75;
+    }
+    .add-to-cart{
+      opacity: .9;
     }
   }
 }

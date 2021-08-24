@@ -16,7 +16,8 @@ const CartDropdown = ({cartDropdownIsHidden}) => (
 )
 
 const mapStateToProps = (state) => ({
-    cartDropdownIsHidden: state.cart.hidden
+    cartDropdownIsHidden: state.cart.hidden,
+    
 })
 
 export default connect(mapStateToProps)(CartDropdown);
