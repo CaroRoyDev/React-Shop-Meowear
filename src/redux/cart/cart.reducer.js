@@ -7,7 +7,7 @@ const INITIAL_STATE = {
 }
 
 const cartReducer = (state = INITIAL_STATE, action) => {
-    console.log("IN action");
+   
     switch (action.type){
         
         case CartActionTypes.TOGGLE_CART_DROPDOWN_VISIBILITY :
