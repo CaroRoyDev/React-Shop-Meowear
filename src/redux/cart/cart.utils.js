@@ -14,3 +14,4 @@ export const addItemToCart = (cartItems, itemToAdd) => {
       return [...cartItems, {...itemToAdd, quantity: 1}];
   }
 };
+
