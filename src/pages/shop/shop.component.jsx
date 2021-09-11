@@ -1,27 +1,24 @@
 import React from 'react';
-import SHOP_DATA from './shop.data';
+import { connect } from 'react-redux';
+import { selectShopCategories } from '../../redux/shop/shop.selectors';
+import { createStructuredSelector } from 'reselect';
+
 
 import CategoryPreview from '../../components/category-preview/category-preview.component';
-class ShopPage extends React.Component {
-    constructor(props) {
-        super(props);
+const ShopPage = ({productCategories}) => {
+    
+    return (
+        <div>
+            <h1>Shop</h1>
+            {productCategories.map(({ id, ...categoryProps }) => (
+                <CategoryPreview key={id} {...categoryProps}></CategoryPreview>
+            ))}
+        </div>
+    )
 
-        this.state = {
-            productCategories: SHOP_DATA
-        }
-    }
-
-    render() {
-        const { productCategories } = this.state;
-        return (
-            <div>
-                <h1>Shop</h1>
-                {productCategories.map(({ id, ...categoryProps }) => (
-                    <CategoryPreview key={id} {...categoryProps}></CategoryPreview>
-                ))}
-            </div>
-        )
-    }
 }
 
-export default ShopPage;
+const mapStateToProps = createStructuredSelector({
+    productCategories: selectShopCategories,
+})
+export default connect(mapStateToProps)(ShopPage);
