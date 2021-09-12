@@ -1,4 +1,5 @@
 import { createSelector } from "reselect";
+import memoize from 'lodash.memoize';
 
 const selectShop = (state) => state.shop;
 
@@ -7,7 +8,9 @@ export const selectShopCategories = createSelector(
   (shop) => shop.categories
 );
 
-export const selectCategory = (categoryUrlParam) =>
+export const selectCategory = memoize(
+  (categoryUrlParam) =>
   createSelector([selectShopCategories], (categories) => 
     categories.find((category) => categoryUrlParam === category.routeName)
-  );
+  )
+);
