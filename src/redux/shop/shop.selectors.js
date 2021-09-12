@@ -11,6 +11,6 @@ export const selectShopCategories = createSelector(
 export const selectCategory = memoize(
   (categoryUrlParam) =>
   createSelector([selectShopCategories], (categories) => 
-    categories.find((category) => categoryUrlParam === category.routeName)
+    categories[categoryUrlParam]
   )
 );

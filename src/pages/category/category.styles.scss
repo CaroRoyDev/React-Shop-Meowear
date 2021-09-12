@@ -1,0 +1,10 @@
+.products-list{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    .product-miniature{
+        margin: 40px 10px;
+    }
+}

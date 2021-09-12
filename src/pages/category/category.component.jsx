@@ -8,13 +8,14 @@ import ProductMiniature from "../../components/product-miniature/product-miniatu
 
 const CategoryPage = ({category}) => {
     const {title, items} = category;
-    
     return (
-        <div className="category">
+        <div className={`category ${title.toLowerCase()}`}>
             <h2>{title}</h2>
+            <div className="products-list">
             {
                 items.map((item)=> <ProductMiniature key={item.id} item={item}/>)
             }
+            </div>
         </div>
 
     )
