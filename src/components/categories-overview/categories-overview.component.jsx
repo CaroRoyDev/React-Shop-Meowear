@@ -4,7 +4,7 @@ import "./categories-overiew.styles.scss";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
-import { selectShopCategories } from '../../redux/shop/shop.selectors';
+import { selectCategoriesAsArray } from '../../redux/shop/shop.selectors';
 
 
 
@@ -23,7 +23,7 @@ const CategoriesOverview = ({productCategories}) => {
 }
 
 const mapStateToProps = createStructuredSelector({
-    productCategories: selectShopCategories,
+    productCategories: selectCategoriesAsArray,
 })
 
 export default connect(mapStateToProps)(CategoriesOverview);

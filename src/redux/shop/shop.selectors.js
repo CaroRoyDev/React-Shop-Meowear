@@ -8,6 +8,11 @@ export const selectShopCategories = createSelector(
   (shop) => shop.categories
 );
 
+export const selectCategoriesAsArray = createSelector(
+  [selectShopCategories],
+  (categories) => Object.values(categories)
+)
+
 export const selectCategory = memoize(
   (categoryUrlParam) =>
   createSelector([selectShopCategories], (categories) => 
