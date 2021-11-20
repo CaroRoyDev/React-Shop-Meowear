@@ -11,15 +11,15 @@ import CartDropdown from "../cart-dropdown/cart-dropdown.component";
 
 import { selectCurrentUser } from "../../redux/user/user.selectors";
 
-import "./header.styles.scss";
+import { HeaderWrapper, LogoWrapper, MenuWrapper, UserPictureWrapper } from "./header.styles";
 
 
 const Header = ({ currentUser }) => (
-    <header className="header">
-        <Link className="logo-container" to="/">
+    <HeaderWrapper className="header">
+        <LogoWrapper className="logo-container" to="/">
             <Logo className="logo" />
-        </Link>
-        <div className="header-menu">
+        </LogoWrapper>
+        <MenuWrapper>
             <Link className="menu-link" to="/shop">
                 Shop
             </Link>
@@ -39,10 +39,10 @@ const Header = ({ currentUser }) => (
                         Sign in
                     </Link>)
             }
-            {currentUser ? <img className="user-picture" src={currentUser.photoURL} alt="" /> : null}
-        </div>
+            {currentUser ? <UserPictureWrapper src={currentUser.photoURL} alt="User profile picture" /> : null}
+        </MenuWrapper>
         <CartDropdown />
-    </header>
+    </HeaderWrapper>
 )
 
 const mapStateToProps = state => ({

@@ -17,6 +17,8 @@ import AuthenticationPage from "./pages/authentication/authentication.component"
 import CheckoutPage from "./pages/checkout/checkout.component";
 
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
+import { ThemeProvider } from "styled-components";
+import { normalTheme, xmasTheme } from "./themes/themes";
 
 
 class App extends React.Component {
@@ -47,7 +49,7 @@ class App extends React.Component {
   render() {
     const { currentUser } = this.props;
     return (
-      <div>
+      <ThemeProvider theme={normalTheme}>
         <Header />
         <div className="main">
           <Switch>
@@ -63,7 +65,7 @@ class App extends React.Component {
             <Route exact path="/checkout" component={CheckoutPage} />
           </Switch>
         </div>
-      </div>
+      </ThemeProvider>
     );
   }
 }

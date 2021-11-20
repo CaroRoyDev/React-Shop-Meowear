@@ -9,24 +9,24 @@ import { withRouter } from "react-router";
 import CustomButton from "../custom-button/custom-button.component";
 import CartItem from "../cart-item/cart-item.component";
 
-import "./cart-dropdown.style.scss";
+import styles from "./cart-dropdown.module.scss";
 
 
 
 const CartDropdown = ({ cartDropdownIsHidden, cartItems, history, dispatch }) => {
 
     return (
-
+       
         cartDropdownIsHidden ? null :
-            (<div className="cart-dropdown">
-                <div className="cart-items">
+            (<div className={styles["cart-dropdown"]}>
+                <div className={styles["cart-items"]}>
                     {
                         cartItems.length ?
                             cartItems.slice().reverse().map(cartItem => (
                                 <CartItem key={cartItem.id} item={cartItem}></CartItem>
                             ))
                             :
-                            <span>You cart is empty :(</span>
+                            <span>You cart is empty :( </span>
                     }
                 </div>
 

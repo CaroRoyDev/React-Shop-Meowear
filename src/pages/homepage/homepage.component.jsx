@@ -1,14 +1,14 @@
 import React from 'react';
-import './homepage.styles.scss';
+import { HomePageWrapper } from './homepage.styles';
 
 import Menu from '../../components/menu/menu.component';
 
 const HomePage = ({history}) => {
    return (
     
-    <div className='homepage'>
+    <HomePageWrapper>
        <Menu/>
-    </div>
+    </HomePageWrapper>
     )
    }
 
