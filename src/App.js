@@ -16,17 +16,23 @@ import ShopPage from "./pages/shop/shop.component";
 import AuthenticationPage from "./pages/authentication/authentication.component";
 import CheckoutPage from "./pages/checkout/checkout.component";
 
-import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
+import { addCollectionsAndDocuments, auth, createUserProfileDocument } from "./firebase/firebase.utils";
 import { ThemeProvider } from "styled-components";
 import { normalTheme, xmasTheme } from "./themes/themes";
+
+import { selectCategoriesAsArray } from "./redux/shop/shop.selectors";
 
 
 class App extends React.Component {
   unsubscribeFromAuth = null;
 
   componentDidMount() {
-    const { setCurrentUser } = this.props;
-
+    
+    const { setCurrentUser, categoriesArray } = this.props;
+    
+    // Used to populate firestore from json data
+    // addCollectionsAndDocuments('categories', categoriesArray.map(({title,items})=> ({title, items})));
+   
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async (user) => {
       if (user) {
         const userRef = await createUserProfileDocument(user);
@@ -40,6 +46,8 @@ class App extends React.Component {
         setCurrentUser(user);
       }
     });
+
+    
   }
 
   componentWillUnmount() {
@@ -71,7 +79,8 @@ class App extends React.Component {
 }
 
 const mapStateToProps = createStructuredSelector({
-  currentUser: selectCurrentUser
+  currentUser: selectCurrentUser,
+  categoriesArray: selectCategoriesAsArray
 });
 
 const mapDispatchToProps = (dispatch) => ({
