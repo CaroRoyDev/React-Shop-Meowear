@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/react-shop-meowear/static/css/main.affa2885.chunk.css",
-    "main.js": "/react-shop-meowear/static/js/main.7f70772b.chunk.js",
-    "main.js.map": "/react-shop-meowear/static/js/main.7f70772b.chunk.js.map",
-    "runtime-main.js": "/react-shop-meowear/static/js/runtime-main.1bc17080.js",
-    "runtime-main.js.map": "/react-shop-meowear/static/js/runtime-main.1bc17080.js.map",
-    "static/js/2.0d088bfc.chunk.js": "/react-shop-meowear/static/js/2.0d088bfc.chunk.js",
-    "static/js/2.0d088bfc.chunk.js.map": "/react-shop-meowear/static/js/2.0d088bfc.chunk.js.map",
-    "static/js/3.b94f999a.chunk.js": "/react-shop-meowear/static/js/3.b94f999a.chunk.js",
-    "static/js/3.b94f999a.chunk.js.map": "/react-shop-meowear/static/js/3.b94f999a.chunk.js.map",
+    "main.css": "/react-shop-meowear/static/css/main.4bef4d8a.chunk.css",
+    "main.js": "/react-shop-meowear/static/js/main.71f8058b.chunk.js",
+    "main.js.map": "/react-shop-meowear/static/js/main.71f8058b.chunk.js.map",
+    "runtime-main.js": "/react-shop-meowear/static/js/runtime-main.f9117212.js",
+    "runtime-main.js.map": "/react-shop-meowear/static/js/runtime-main.f9117212.js.map",
+    "static/js/2.918dc69f.chunk.js": "/react-shop-meowear/static/js/2.918dc69f.chunk.js",
+    "static/js/2.918dc69f.chunk.js.map": "/react-shop-meowear/static/js/2.918dc69f.chunk.js.map",
+    "static/js/3.e9b3d24b.chunk.js": "/react-shop-meowear/static/js/3.e9b3d24b.chunk.js",
+    "static/js/3.e9b3d24b.chunk.js.map": "/react-shop-meowear/static/js/3.e9b3d24b.chunk.js.map",
     "index.html": "/react-shop-meowear/index.html",
     "service-worker.js": "/react-shop-meowear/service-worker.js",
     "service-worker.js.map": "/react-shop-meowear/service-worker.js.map",
-    "static/css/main.affa2885.chunk.css.map": "/react-shop-meowear/static/css/main.affa2885.chunk.css.map",
-    "static/js/2.0d088bfc.chunk.js.LICENSE.txt": "/react-shop-meowear/static/js/2.0d088bfc.chunk.js.LICENSE.txt",
+    "static/css/main.4bef4d8a.chunk.css.map": "/react-shop-meowear/static/css/main.4bef4d8a.chunk.css.map",
+    "static/js/2.918dc69f.chunk.js.LICENSE.txt": "/react-shop-meowear/static/js/2.918dc69f.chunk.js.LICENSE.txt",
     "static/media/logo.3a4e2b15.svg": "/react-shop-meowear/static/media/logo.3a4e2b15.svg",
     "static/media/shopping-bag.a688874f.svg": "/react-shop-meowear/static/media/shopping-bag.a688874f.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.1bc17080.js",
-    "static/js/2.0d088bfc.chunk.js",
-    "static/css/main.affa2885.chunk.css",
-    "static/js/main.7f70772b.chunk.js"
+    "static/js/runtime-main.f9117212.js",
+    "static/js/2.918dc69f.chunk.js",
+    "static/css/main.4bef4d8a.chunk.css",
+    "static/js/main.71f8058b.chunk.js"
   ]
 }
