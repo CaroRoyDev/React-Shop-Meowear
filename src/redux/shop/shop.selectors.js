@@ -10,12 +10,12 @@ export const selectShopCategories = createSelector(
 
 export const selectCategoriesAsArray = createSelector(
   [selectShopCategories],
-  (categories) => Object.values(categories)
+  (categories) => categories ? Object.values(categories) : []
 )
 
 export const selectCategory = memoize(
   (categoryUrlParam) =>
   createSelector([selectShopCategories], (categories) => 
-    categories[categoryUrlParam]
+    categories ? categories[categoryUrlParam] : null
   )
 );

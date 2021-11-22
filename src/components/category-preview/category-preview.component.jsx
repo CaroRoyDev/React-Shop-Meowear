@@ -1,11 +1,14 @@
 import React from "react";
 import './category-preview.styles.scss';
-
+import { Link } from "react-router-dom";
+import { withRouter } from "react-router";
 import ProductMiniature from "../product-miniature/product-miniature.component";
 
-const CategoryPreview = ({ title, items }) => (
+const CategoryPreview = ({ title, items, routeName, match }) => (
     <div className="category-preview">
         <h1>{title}</h1>
+        <span><Link to={`${match.path}/${routeName}`}>View all &rsaquo; </Link></span>
+        {console.log()}
         <div className="preview">
             {items
                 .filter((item, index) => index < 4)
@@ -16,4 +19,4 @@ const CategoryPreview = ({ title, items }) => (
     </div>
 )
 
-export default CategoryPreview;
+export default withRouter(CategoryPreview);

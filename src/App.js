@@ -16,11 +16,11 @@ import ShopPage from "./pages/shop/shop.component";
 import AuthenticationPage from "./pages/authentication/authentication.component";
 import CheckoutPage from "./pages/checkout/checkout.component";
 
-import { addCollectionsAndDocuments, auth, createUserProfileDocument } from "./firebase/firebase.utils";
+import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 import { ThemeProvider } from "styled-components";
-import { normalTheme, xmasTheme } from "./themes/themes";
+import { normalTheme } from "./themes/themes";
 
-import { selectCategoriesAsArray } from "./redux/shop/shop.selectors";
+
 
 
 class App extends React.Component {
@@ -28,7 +28,7 @@ class App extends React.Component {
 
   componentDidMount() {
     
-    const { setCurrentUser, categoriesArray } = this.props;
+    const { setCurrentUser} = this.props;
     
     // Used to populate firestore from json data
     // addCollectionsAndDocuments('categories', categoriesArray.map(({title,items})=> ({title, items})));
@@ -79,8 +79,7 @@ class App extends React.Component {
 }
 
 const mapStateToProps = createStructuredSelector({
-  currentUser: selectCurrentUser,
-  categoriesArray: selectCategoriesAsArray
+  currentUser: selectCurrentUser
 });
 
 const mapDispatchToProps = (dispatch) => ({

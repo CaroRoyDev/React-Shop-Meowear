@@ -1,11 +1,17 @@
-import SHOP_DATA from "./shop.data";
+
+import ShopActionsTypes from "./shop.types";
 
 const INITIAL_STATE = {
-    categories: SHOP_DATA
+    categories: null
 };
 
 const shopReducer = (state=INITIAL_STATE, action) => {
     switch(action.type){
+        case ShopActionsTypes.UPDATE_COLLECTIONS : 
+            return{
+                ...state,
+                categories: action.payload
+            }
         default:
             return state;
     }
