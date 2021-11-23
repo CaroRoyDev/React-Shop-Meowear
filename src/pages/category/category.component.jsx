@@ -7,8 +7,14 @@ import { withRouter } from "react-router";
 
 import ProductMiniature from "../../components/product-miniature/product-miniature.component";
 
+
 const CategoryPage = ({category}) => {
   const { title, items } = category;
+
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
+
   return (
     <div className={`category ${title.toLowerCase()}`}>
       <h2>{title}</h2>
