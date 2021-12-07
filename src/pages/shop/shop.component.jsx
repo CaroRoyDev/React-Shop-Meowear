@@ -3,7 +3,7 @@ import React from "react";
 import { Route } from "react-router-dom";
 
 import { connect } from "react-redux";
-import { fetchCategoriesStartAsync } from "../../redux/shop/shop.actions";
+import { fetchCategoriesStart } from "../../redux/shop/shop.actions";
 
 
 import CategoryPageContainer from "../category/category.container";
@@ -36,7 +36,7 @@ class ShopPage extends React.Component {
 
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchCategories: () => dispatch(fetchCategoriesStartAsync())
+  fetchCategories: () => dispatch(fetchCategoriesStart())
 });
 
 export default connect(null, mapDispatchToProps)(ShopPage);
