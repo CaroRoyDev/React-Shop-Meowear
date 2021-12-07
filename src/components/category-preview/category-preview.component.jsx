@@ -8,12 +8,11 @@ const CategoryPreview = ({ title, items, routeName, match }) => (
     <div className="category-preview">
         <h1>{title}</h1>
         <span><Link to={`${match.path}/${routeName}`}>View all &rsaquo; </Link></span>
-        {console.log()}
         <div className="preview">
             {items
                 .filter((item, index) => index < 4)
                 .map((item) => (
-                   <ProductMiniature key={item.id} item={item}></ProductMiniature>
+                    <ProductMiniature key={item.id} item={item}></ProductMiniature>
                 ))}
         </div>
     </div>

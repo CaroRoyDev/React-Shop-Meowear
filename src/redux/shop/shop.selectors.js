@@ -19,3 +19,8 @@ export const selectCategory = memoize(
     categories ? categories[categoryUrlParam] : null
   )
 );
+
+export const selectCategoriesIsFetching = createSelector(
+  [selectShop],
+  (shop) => shop.isFetching
+)
