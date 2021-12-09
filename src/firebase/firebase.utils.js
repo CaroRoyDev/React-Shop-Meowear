@@ -16,6 +16,7 @@ firebase.initializeApp(firebaseConfig);
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
+// User and auth utilities
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!userAuth) return;
 
@@ -42,6 +43,21 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   return userRef;
 };
 
+export const getCurrentUser = () => {
+  return new Promise((resolve, reject) => {
+    const unsubscribe = auth.onAuthStateChanged((userAuth) => {
+      unsubscribe();
+      resolve(userAuth);
+    }, reject);
+  });
+};
+
+export const googleProvider = new firebase.auth.GoogleAuthProvider();
+googleProvider.setCustomParameters({ promp: "select_account" });
+
+// export const signInWithGoogle = () => auth.signInWithPopup(googleProvider);
+
+// Fill fireabase with data.js
 export const addCollectionsAndDocuments = async (
   collectionKey,
   documentsToAdd
@@ -57,6 +73,7 @@ export const addCollectionsAndDocuments = async (
   return await batch.commit();
 };
 
+// Data model converter between Categories in firebase and categories in app
 export const convertCategoriesSnapshotToMap = (categoriesSnapshot) => {
   const transformedCategories = categoriesSnapshot.docs.map((document) => {
     const { title } = document.data();
@@ -75,10 +92,5 @@ export const convertCategoriesSnapshotToMap = (categoriesSnapshot) => {
 
   return storeData;
 };
-
-const provider = new firebase.auth.GoogleAuthProvider();
-provider.setCustomParameters({ promp: "select_account" });
-
-export const signInWithGoogle = () => auth.signInWithPopup(provider);
 
 export default firebase;

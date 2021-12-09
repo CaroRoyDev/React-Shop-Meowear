@@ -1,8 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-
+import { signOutStart } from "../../redux/user/user.actions";
 import { Link } from "react-router-dom";
-import { auth } from "../../firebase/firebase.utils";
 
 import { ReactComponent as Logo } from '../../assets/logo.svg';
 import CartIcon from "../cart-icon/cart-icon.component";
@@ -14,7 +13,7 @@ import { selectCurrentUser } from "../../redux/user/user.selectors";
 import { HeaderWrapper, LogoWrapper, MenuWrapper, UserPictureWrapper } from "./header.styles";
 
 
-const Header = ({ currentUser }) => (
+const Header = ({ currentUser, signOut }) => (
     <HeaderWrapper className="header">
         <LogoWrapper className="logo-container" to="/">
             <Logo className="logo" />
@@ -31,9 +30,9 @@ const Header = ({ currentUser }) => (
             </span>
             {
                 currentUser ?
-                    (<span className="menu-link" onClick={() => auth.signOut()}>
+                    (<span className="menu-link" onClick={signOut}>
                         Sign out
-                    </span>) 
+                    </span>)
                     :
                     (<Link className="menu-link" to="/signin">
                         Sign in
@@ -49,4 +48,8 @@ const mapStateToProps = state => ({
     currentUser: selectCurrentUser(state)
 })
 
-export default connect(mapStateToProps)(Header);
+const mapDispatchToProps = dispatch => ({
+    signOut: () => dispatch(signOutStart())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
